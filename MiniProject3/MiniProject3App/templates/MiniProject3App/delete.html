@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+</head>
+<body>
+<!--page to delete timecard entries-->
+<form method="post">
+    {% csrf_token %}
+    <a href="{% url 'delete' timecard.id %}}">Delete Timecard></a>
+    Are you sure you want to delete
+   " {{timecard.teacher_name}}" ?>
+    <input type="submit" value='Delete'/>
+
+
+</form>
+</body>
+</html>

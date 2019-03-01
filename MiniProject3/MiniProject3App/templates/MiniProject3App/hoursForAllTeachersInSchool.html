@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hours For All Teacher at Selected School</h1>
+{% csrf_token %}
+
+{% for eachEntry in allTimecardHours %}
+
+<p>{{timecard.hours}}</p>
+
+{% endfor %}
+<h1>Here is the form</h1>
+<form action="{% url 'hoursForAllTeachersInSchool' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Submit</button>
+</form>
+
+</body>
+</html>

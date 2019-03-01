@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>All Entries in Database</h1>
+
+{% csrf_token %}
+{% for entry in timecard_list %}
+
+<p><a href="{% url 'selectedTeacherInfo'  %}">
+    {{timecard.teacher_.name}}>
+</a>
+</p>
+<p><a href="{% url 'hoursForAllTeachersInSchool' %}">
+    {{timecard.school}}></a></p>
+
+<p>{{timecard.subject}}</p>
+<p>{{timecard.hours}}</p>
+<p>{{timecard.date_of_work}}</p>
+<p>{{timecard.date_of_entry}}</p>
+
+<hr/>
+
+{% endfor %}
+    <h1>Here is the form</h1>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Submit</button>
+    </form>
+</body>
+</html>

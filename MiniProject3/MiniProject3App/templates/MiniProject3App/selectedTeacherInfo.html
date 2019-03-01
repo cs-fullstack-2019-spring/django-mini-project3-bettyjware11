@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selected Teacher Info</title>
+</head>
+<body>
+<h1>All Info for Selected Teacher</h1>
+<!--page to display form with all info about selected teacher-->
+<form method="POST">
+    {{ timecardform.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Submit"></form>
+</body>
+</html>
